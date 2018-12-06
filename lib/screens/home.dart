@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterland/screens/quiz.dart';
+import 'package:flutterland/widgets/custom_drawer.dart';
 
 class Home extends StatefulWidget {
 
@@ -17,24 +19,13 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white,),
         ),
+        centerTitle: true,
         iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 87, 158)),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              currentAccountPicture: FlutterLogo(),
-            ),
-            ListTile(
-              title: Text("Widgets Quiz"),
-              trailing: Icon(Icons.widgets),
-            )
-          ],
-        ),
-      ),
-      body: Center(child: Text("Hello World")),
+      drawer: CustomDrawer(),
+      body: Quiz(),
     );
   }
 }
